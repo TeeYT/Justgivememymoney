@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only for Kamo</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #money-display {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        #deposit-button {
+            background-color: #ff007f;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #deposit-button:hover {
+            background-color: #e60072;
+        }
+        #confirmation {
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Only for Kamo</h1>
+
+    <input type="text" id="code-input" placeholder="Enter your code">
+    <button onclick="checkCode()">Submit</button>
+
+    <div id="money-section" style="display:none;">
+        <div id="money-display">$1,000,000,000,000,000</div>
+        <button id="deposit-button" onclick="depositMoney()">Deposit</button>
+        <div id="confirmation"></div>
+    </div>
+
+    <script>
+        function checkCode() {
+            const codeInput = document.getElementById('code-input').value;
+            if (codeInput === '851859192085131514525') {  // Replace 'KamoSecretCode' with the actual code
+                document.getElementById('money-section').style.display = 'block';
+            } else {
+                alert('Invalid code!');
+            }
+        }
+
+        function depositMoney() {
+            document.getElementById('money-display').innerText = '$0';
+            document.getElementById('confirmation').innerText = 'Money will be delivered to you tomorrow.';
+            document.getElementById('deposit-button').disabled = true;
+            document.getElementById('deposit-button').style.backgroundColor = '#555';
+        }
+    </script>
+</body>
+</html>
